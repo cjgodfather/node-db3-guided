@@ -1,7 +1,11 @@
 exports.seed = function(knex, Promise) {
-  return knex('users').insert([
-    { username: 'lao_tzu' },
-    { username: 'socrates' },
-    { username: 'seneca' },
-  ]);
+  return knex("users")
+    .truncate()
+    .then(() =>
+      knex("users").insert([
+        { username: "chao" },
+        { username: "mag" },
+        { username: "senf" }
+      ])
+    );
 };
